@@ -1,0 +1,33 @@
+{
+  "name": "winston-modern-syslog",
+  "version": "0.0.0",
+  "description": "A syslog transport for winston using the modern-syslog package",
+  "main": "lib/winston-modern-syslog.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skybet/winston-modern-syslog"
+  },
+  "keywords": [
+    "winston",
+    "log",
+    "logger",
+    "transport",
+    "syslog",
+    "modern-syslog"
+  ],
+  "author": "Alex Silcock",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/skybet/winston-modern-syslog/issues"
+  },
+  "homepage": "https://github.com/skybet/winston-modern-syslog",
+  "dependencies": {
+    "modern-syslog": "^1.1.2"
+  },
+  "peerDependencies": {
+    "winston": ">= 0.4.0 < 3.0.0"
+  }
+}
