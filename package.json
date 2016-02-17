@@ -1,10 +1,10 @@
 {
   "name": "winston-modern-syslog",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A syslog transport for winston using the modern-syslog package",
   "main": "lib/winston-modern-syslog.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,12 @@
   "homepage": "https://github.com/skybet/winston-modern-syslog",
   "dependencies": {
     "modern-syslog": "^1.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "sinon": "^1.17.3",
+    "should": "^8.2.2",
+    "rewire": "^2.5.1"
   },
   "peerDependencies": {
     "winston": ">= 0.4.0 < 3.0.0"
