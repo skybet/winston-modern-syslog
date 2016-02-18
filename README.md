@@ -31,3 +31,5 @@ The ModernSyslog transport has the following options:
 * __logPid__: Whether to log the application's PID with the log messages (default false).
 
 As syslog only supports a subset of the levels available in winston, in the example above we explicitly configure winston to use the syslog levels.
+
+Metadata objects are logged via `JSON.stringify(meta)`.

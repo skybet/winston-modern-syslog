@@ -37,7 +37,6 @@ describe('ModernSyslog', function () {
         it('should default logPid to false', function () {
             var transport = new ModernSyslog();
 
-            mockSyslog.open.firstCall.args[0].should.equal('');
             mockSyslog.open.firstCall.args[1].should.equal(0);
         });
     });
@@ -58,6 +57,24 @@ describe('ModernSyslog', function () {
             callback.callCount.should.equal(0);
             mockSyslog.log.firstCall.args[2]();
             callback.callCount.should.equal(1);
+        });
+
+        it('should cope with missing metadata', function () {
+            var transport = new ModernSyslog();
+            transport.log('info', 'log message');
+            mockSyslog.log.firstCall.args[1].should.equal('log message');
+        });
+
+        it('should log metadata object as JSON string', function () {
+            var transport = new ModernSyslog();
+            transport.log('info', 'log message', {foo: 'bar'});
+            mockSyslog.log.firstCall.args[1].should.equal('log message {"foo":"bar"}');
+        });
+
+        it('should log metadata error', function () {
+            var transport = new ModernSyslog();
+            transport.log('info', 'log message', new Error('it broke'));
+            mockSyslog.log.firstCall.args[1].should.equal('log message Error: it broke');
         });
     });
 });
