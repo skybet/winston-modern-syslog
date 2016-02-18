@@ -59,6 +59,12 @@ describe('ModernSyslog', function () {
             callback.callCount.should.equal(1);
         });
 
+        it('should prefix log levels if configured', function () {
+            var transport = new ModernSyslog({prefixLevel: true});
+            transport.log('info', 'log message');
+            mockSyslog.log.firstCall.args[1].should.equal('[INFO] log message');
+        });
+
         it('should cope with missing metadata', function () {
             var transport = new ModernSyslog();
             transport.log('info', 'log message');

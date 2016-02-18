@@ -29,6 +29,7 @@ The ModernSyslog transport has the following options:
 * __level__: Level of messages that this transport should log (default 'info').
 * __label__: The message prefix (default `process.title`).
 * __logPid__: Whether to log the application's PID with the log messages (default false).
+* __prefixLevel__: Whether to prefix the log level on the log messages (default false).
 
 As syslog only supports a subset of the levels available in winston, in the example above we explicitly configure winston to use the syslog levels.
 
