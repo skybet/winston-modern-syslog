@@ -31,7 +31,8 @@
     "mocha": "^2.4.5",
     "sinon": "^1.17.3",
     "should": "^8.2.2",
-    "rewire": "^2.5.1"
+    "rewire": "^2.5.1",
+    "winston": ">= 0.4.0 < 3.0.0"
   },
   "peerDependencies": {
     "winston": ">= 0.4.0 < 3.0.0"
