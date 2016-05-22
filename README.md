@@ -1,5 +1,7 @@
 # winston-modern-syslog
 
+[![Build Status](https://travis-ci.org/skybet/winston-modern-syslog.svg)](https://travis-ci.org/skybet/winston-modern-syslog)
+
 A syslog transport for [winston](https://www.npmjs.com/package/winston) that is a simple wrapper for the [modern-syslog](https://www.npmjs.com/package/modern-syslog) library.
 
 ## Installation
@@ -35,3 +37,11 @@ The ModernSyslog transport has the following options:
 As syslog only supports a subset of the levels available in winston, in the example above we explicitly configure winston to use the syslog levels.
 
 Metadata objects are logged via `JSON.stringify(meta)`.
+
+## Tests
+
+The tests are written in [Mocha](https://www.npmjs.org/package/mocha). They can be run with npm:
+
+```javascript
+npm test
+```
