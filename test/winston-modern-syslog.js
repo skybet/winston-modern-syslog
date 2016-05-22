@@ -7,6 +7,12 @@ var mockSyslog = {
     option: {
         LOG_PID: 1
     },
+    level: {
+        LOG_INFO: 6
+    },
+    facility: {
+        LOG_USER: 16
+    },
     open: sinon.spy(),
     log:  sinon.spy()
 };
@@ -50,7 +56,7 @@ describe('ModernSyslog', function () {
             transport.log('info', 'this is my log message', {}, callback);
 
             mockSyslog.log.callCount.should.equal(1);
-            mockSyslog.log.firstCall.args[0].should.equal('info');
+            mockSyslog.log.firstCall.args[0].should.equal(mockSyslog.level.LOG_INFO);
             mockSyslog.log.firstCall.args[1].should.equal('this is my log message');
 
             // now complete the log action
