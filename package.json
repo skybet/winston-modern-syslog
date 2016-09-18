@@ -1,6 +1,6 @@
 {
   "name": "winston-modern-syslog",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A syslog transport for winston using the modern-syslog package",
   "main": "lib/winston-modern-syslog.js",
   "scripts": {
